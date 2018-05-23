@@ -79,7 +79,7 @@ saveRDS(twitter_token, file = file_name)
 #     from the previous code chunk, then the code below should
 #     create and save your environment variable.
 
-cat(paste0("TWITTER_PAT=", file_name),
+cat(paste0("TWITTER_PAT = C:/Users/jnsvalve/Documents/twitter_token.rds", file_name),
   file = file.path(home_directory, ".Renviron"),
   append = TRUE
 )
@@ -148,7 +148,7 @@ my_table <- datatable(my_likes,
   colnames = c("Date", "Handle", "Text", "URL")
 )
 
-my_table <- formatStyle(my_table, columns = 1:4, fontSize = "70%")
+my_table <- formatStyle(my_table, columns = 1:4, fontSize = "90%")
 my_table <- formatStyle(my_table, columns = 3, width = "500px")
 
 # Thats it. We’ve made a searchable twitter favorite dashboard!
@@ -171,25 +171,8 @@ system(paste("firefox", temp_file))
 library(widgetframe)
 
 frameWidget(my_table,
-  width = "100%", height = 800,
+  width = "100%", height = 1200,
   options = frameOptions(allowfullscreen = TRUE)
 )
 
 
-## create token
-twitter_token <- create_token(app = appname, 
-                              consumer_key = key, consumer_secret = secret) 
-
-## search tweets with explicit token arg
-search_tweets("lang:en", token = twitter_token)
-
-# Regardless of whether the above code works, can you paste the output from the following as well?
-  
-  ## print TWITTER_PAT environment variable
-  Sys.getenv("TWITTER_PAT")
-
-## print token fetched by `get_token()` function
-get_token()
-
-## print session info
-sessionInfo()
