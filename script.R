@@ -18,10 +18,10 @@ library(DT)
 appname <- "rtweet-tokens-jnsvalve"
 
 # api key
-key <- "5lUojPz8j6ou5qAWptMt1Httg"
+key <- ""
 
 # api secret
-secret <- "XTFA9awlD82ZnfWGXm0jxCZUEkcmhE9JtVtsIFXt7GFX5ZfV3X"
+secret <- ""
 
 # create token named "twitter_token"
 twitter_token <- create_token(
